@@ -10,6 +10,7 @@ Installation
 Install with pip::
 
     pip install -r requirements.txt
+    cd api
     python manage.py migrate
 
 Post-Installation
