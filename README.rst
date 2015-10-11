@@ -36,6 +36,16 @@ Testing the setup
 
     curl -X POST http://localhost:8000/rest-auth/logout/
 
+- Password reset using curl:
+
+    curl -X POST -d "email=<email>" http://localhost:8000/rest-auth/password/reset/
+
+    curl -X POST -d "uid=<uid>&token=<token>&new_password1=<new_password1>&new_password2=<new_password2>" http://localhost:8000/rest-auth/password/reset/confirm/
+
+- Change password using curl:
+
+    curl -X POST -d "old_password=<old_password>&new_password1=<new_password1>&new_password2=<new_password2>" http://localhost:8000/rest-auth/password/change/
+
 If you have any questions feel free to ask me.
 
 
@@ -52,4 +62,4 @@ You can find the id and secret of your app at https://developers.facebook.com/ap
 
 For testing purposes you can use the access token `<user_access_token>` from https://developers.facebook.com/tools/accesstoken/.
 
-For more information on how to configure python-social-auth with Facebook visit http://django-rest-auth.readthedocs.org/
+For more information on how to configure python-social-auth with Facebook visit http://django-allauth.readthedocs.org/.
