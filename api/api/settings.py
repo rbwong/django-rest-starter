@@ -86,8 +86,11 @@ AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend',
 )
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' 
-
+REST_SESSION_LOGIN = False
+ACCOUNT_AUTHENTICATION_METHOD = 'username'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+SITE_ID = 1
+ACCOUNT_EMAIL_REQUIRED = True
 WSGI_APPLICATION = 'api.wsgi.application'
 
 
@@ -120,5 +123,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-
-SITE_ID = 1
