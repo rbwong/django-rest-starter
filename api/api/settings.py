@@ -38,20 +38,23 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #rest_framework
+    # rest_framework
     'rest_framework',
     'rest_framework.authtoken',
     'rest_auth',
-    #allauth
+    # allauth
     'allauth',
     'allauth.account',
     'rest_auth.registration',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook',
+    # cors headers
+    'corsheaders',
 )
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -93,6 +96,9 @@ SITE_ID = 1
 ACCOUNT_EMAIL_REQUIRED = True
 WSGI_APPLICATION = 'api.wsgi.application'
 
+
+# CORS Headers
+CORS_ORIGIN_ALLOW_ALL = True
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
